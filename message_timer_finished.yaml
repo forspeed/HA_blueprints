@@ -29,9 +29,8 @@ blueprint:
       description: |
         Extra actions you may want to add to this automation 
         (Example: Restart timer, so that the message is sent again)
-      default: []
       selector:
-        condition:    
+        action:    
   
 mode: single
 trigger:
