@@ -1,6 +1,6 @@
 blueprint:
-  name: Message when timer has finished
-  description: Send a message when the timer has finished. Can be used e.g. for open window notification.
+  name: Message when timer has finished and restart timer
+  description: Send a message when the timer has finished. Can be used e.g. for open window notification. Should add condition to monitor if state is still true.
   domain: automation
   input:
     timer_target:
@@ -16,6 +16,14 @@ blueprint:
       selector:
         text:
           multiline: false
+    additional_conditions:
+      name: Additional conditions
+      description: |
+        Extra conditions you may want to add to this automation 
+        (Example: Window still open?)
+      default: []
+      selector:
+        condition:
   
 mode: single
 trigger:
@@ -23,6 +31,9 @@ trigger:
     event_type: timer.finished
     event_data:
       entity_id: !input timer_target
+condition:
+  - alias: User pick
+    condition: !input additional_conditions
 action:
   - service: notify.telegram_notify
     data:
