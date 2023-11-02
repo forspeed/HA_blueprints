@@ -46,6 +46,6 @@ action:
   - service: notify.telegram_notify
     data:
       message: !input message
-  !input additional_action
-
-    
+   - alias: "Run the additional action"
+    choose: []
+    default: !input additional_action
