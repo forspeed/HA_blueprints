@@ -1,0 +1,29 @@
+blueprint:
+  name: Message when timer has finished
+  description: Send a message when the timer has finished. Can be used e.g. for open window notification.
+  domain: automation
+  input:
+    timer_target:
+      name: Timer to start
+      description: The timer that should be monitored
+      selector:
+        entity:
+          domain:
+          - timer
+    message:
+      description: The message that shall be sent via telegram
+      name: Climate Device
+      selector:
+        text:
+          multiline: false
+  
+mode: single
+trigger:
+  - platform: event
+    event_type: timer.finished
+    event_data:
+      entity_id: !input timer_target
+action:
+  - service: notify.telegram_notify
+    data:
+      message: !input message
