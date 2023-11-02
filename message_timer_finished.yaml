@@ -4,7 +4,7 @@ blueprint:
   domain: automation
   input:
     timer_target:
-      name: Timer to start
+      name: Timer to monitor
       description: The timer that should be monitored
       selector:
         entity:
@@ -27,3 +27,7 @@ action:
   - service: notify.telegram_notify
     data:
       message: !input message
+  - service: timer.start
+    target:
+      entity_id: !input timer_target
+    
