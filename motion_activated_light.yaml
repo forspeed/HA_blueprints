@@ -15,9 +15,7 @@ blueprint:
       selector:
         target:
           entity:
-            multiple: true
-            filter:
-              domain: light 
+            domain: light
     additional_conditions:
       name: Additional conditions
       description: Any additional conditions that might be required (e.g. light sensor)
