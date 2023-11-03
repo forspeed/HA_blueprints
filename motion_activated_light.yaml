@@ -39,6 +39,13 @@ blueprint:
         entity:
           filter:
             domain: sun
+    additional_action:
+      name: Additional action
+      description: |
+        Extra actions you may want to add to this automation 
+        (Example: Send telegram notification)
+      selector:
+        action:
 
 
 # If motion is detected within the delay,
