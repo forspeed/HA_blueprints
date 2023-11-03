@@ -17,7 +17,7 @@ blueprint:
         target:
           entity:
             domain: light
-            multiple: true
+          multiple: true
             
     additional_conditions:
       name: Additional conditions
