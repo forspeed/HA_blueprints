@@ -18,9 +18,11 @@ blueprint:
           entity:
             domain: light
             multiple: true
-    additional_conditions:
+     additional_conditions:
       name: Additional conditions
-      description: Extra conditions you may want to add to this automation
+      description: |
+        Extra conditions you may want to add to this automation 
+        (Example: Home occupied, TV on, etc)
       default: []
       selector:
         condition:
