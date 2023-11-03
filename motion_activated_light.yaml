@@ -20,9 +20,7 @@ blueprint:
             multiple: true
     additional_conditions:
       name: Additional conditions
-      description: |
-        Extra conditions you may want to add to this automation 
-        (Example: Home occupied, TV on, etc)
+      description: 
       default: []
       selector:
         condition:
