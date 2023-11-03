@@ -73,6 +73,6 @@ condition:
   value_template: '{{ sensors != '''' and (day | int == 0 or day | int == now().isoweekday()) }}'
 action:
 - service: notify.telegram_notify
-    data:
-      message: 'Batterie ist fast leer: {{sensors|replace("_"," ")}}'
+  data:
+    message: 'Batterie ist fast leer: {{sensors|replace("_"," ")}}'
 mode: single
